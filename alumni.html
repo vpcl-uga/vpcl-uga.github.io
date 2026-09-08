@@ -41,11 +41,62 @@
 
     <!-- Navbar Start -->
     <style>
-        .navbar.navbar-maroon { background-color: #800000; }
-        .navbar.navbar-maroon .nav-link,
-        .navbar.navbar-maroon .nav-link.active { color: #ffffff; }
-        .navbar.navbar-maroon .nav-link:hover,
-        .navbar.navbar-maroon .nav-link:focus { color: #ffffff; opacity: 0.75; }
+        .navbar.navbar-maroon,
+        .navbar.navbar-maroon.sticky-top {
+            background-color: #800000 !important;
+        }
+        .navbar.navbar-maroon .navbar-nav .nav-link,
+        .navbar.navbar-maroon .navbar-nav .nav-link.active,
+        .navbar.navbar-maroon.sticky-top .navbar-nav .nav-link,
+        .navbar.navbar-maroon.sticky-top .navbar-nav .nav-link.active {
+            color: #ffffff !important;
+        }
+        .navbar.navbar-maroon .navbar-nav .nav-link:hover,
+        .navbar.navbar-maroon .navbar-nav .nav-link:focus,
+        .navbar.navbar-maroon.sticky-top .navbar-nav .nav-link:hover,
+        .navbar.navbar-maroon.sticky-top .navbar-nav .nav-link:focus {
+            color: #ffffff !important;
+            opacity: 0.75;
+        }
+        .navbar.navbar-maroon,
+        .navbar.navbar-maroon.sticky-top {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1030;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 100px;
+            background-color: #f2f3f5;
+        }
+        @media (max-width: 991.98px) {
+            body { padding-top: 126px; }
+        }
+        .team-item { background-color: #ffffff !important; }
+        .team-img img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: top center;
+        }
+        .maroon-rule {
+            border: none;
+            border-top: 3px solid #800000;
+            opacity: 1;
+            margin: 0;
+        }
+        @media (min-width: 992px) {
+            .row-5 > [class*="col-"] {
+                flex: 0 0 auto;
+                width: 20%;
+            }
+        }
+        .site-footer { margin-top: auto; }
     </style>
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-maroon px-5 py-3 py-lg-0">
@@ -58,21 +109,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link active">People</a>
+                    <a href="about.html" class="nav-item nav-link">People</a>
                     <a href="publications.html" class="nav-item nav-link">Research</a>
                     <a href="info.html" class="nav-item nav-link">Info</a>
-                    <a href="alumni.html" class="nav-item nav-link">Alumni</a>
+                    <a href="alumni.html" class="nav-item nav-link active">Alumni</a>
                 </div>
             </div>
         </nav>
-
-        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-            <div class="row py-5">
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">Our Team</h1>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- Navbar End -->
 
@@ -80,11 +123,8 @@
     <!-- Team Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h1 class="mb-0">Our dedicated researchers and collaborators</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+            <div class="row row-5 g-4 mb-5">
+                <div class="col-lg-3 col-md-6 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light rounded overflow-hidden">
                         <div class="team-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="img/Dr-Bhandarkar.png" alt="Dr. Bhandarkar">
@@ -98,6 +138,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <h2 class="text-primary mb-3">PhD</h2>
+            <hr class="maroon-rule mb-5">
+            <div class="row row-5 g-4 mb-5">
 
 
                 <div class="modal fade" id="bioModal1" tabindex="-1" aria-labelledby="bioModalLabel" aria-hidden="true">
@@ -118,7 +163,7 @@
                 </div>
 
 
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                <div class="col-lg-3 col-md-6 wow slideInUp" data-wow-delay="0.6s">
                     <div class="team-item bg-light rounded overflow-hidden">
                         <div class="team-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="img/Preeti Chatterjee.jpg" alt="">
@@ -152,7 +197,7 @@
                 </div>
 
 
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                <div class="col-lg-3 col-md-6 wow slideInUp" data-wow-delay="0.9s">
                     <div class="team-item bg-light rounded overflow-hidden">
                         <div class="team-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="img/Jayant Parashar.jpg" alt="">
@@ -188,7 +233,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+            <div class="col-lg-3 col-md-6 wow slideInUp" data-wow-delay="0.9s">
                 <div class="team-item bg-light rounded overflow-hidden">
                     <div class="team-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="img/TasnuvaTabassum.jpg" alt="">
@@ -229,10 +274,10 @@
             </div>
 
             
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+            <div class="col-lg-3 col-md-6 wow slideInUp" data-wow-delay="0.9s">
                 <div class="team-item bg-light rounded overflow-hidden">
                     <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/NoyonDey.jpg" alt="">
+                        <img class="img-fluid w-100" src="img/NoyonDey.jpeg" alt="">
                     </div>
                     <div class="text-center py-4">
                         <h4 class="text-primary">Noyon Dey</h4>
@@ -267,7 +312,12 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+            </div>
+
+            <h2 class="text-primary mb-3">Master's</h2>
+            <hr class="maroon-rule mb-5">
+            <div class="row row-5 g-4">
+            <div class="col-lg-3 col-md-6 wow slideInUp" data-wow-delay="0.9s">
                 <div class="team-item bg-light rounded overflow-hidden">
                     <div class="team-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="img/Bhumika Gupta.jpg" alt="">
@@ -303,58 +353,29 @@
     <!-- Team End -->
 
 
-    
-    
+    <div class="container">
+        <hr class="maroon-rule">
+    </div>
+
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid text-dark mt-5 site-footer" style="background: #f1f1f1;">
         <div class="container">
-            <div class="row gx-5">
-                
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Get In Touch</h3>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">Boyd Research Center, Athens, Georgia</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">vpcl.uga@gmail.com</p>
-                            </div>
-                            
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Quick Links</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                                <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>People</a>
-                                <a class="text-light mb-2" href="publications.html"><i class="bi bi-arrow-right text-primary me-2"></i>Research</a>
-                                <a class="text-light mb-2" href="info.html"><i class="bi bi-arrow-right text-primary me-2"></i>Info</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                        </div>
+            <div class="row align-items-center py-4 gy-3 text-center text-lg-start">
+                <div class="col-lg-4">
+                    <img src="img/SoC-Logo.svg" alt="School of Computing" style="height: 85px;">
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex flex-column align-items-center align-items-lg-start">
+                        <span class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>207A, Boyd Research Center, Athens, Georgia</span>
+                        <span><i class="bi bi-envelope-open text-primary me-2"></i>vpcl.uga@gmail.com</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid text-white" style="background: #061429;">
-        <div class="container text-center">
-            <div class="row justify-content-end">
-                <div class="col-lg-8 col-md-6">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#"></a>
-						
-						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-						Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
-                    </div>
+                <div class="col-lg-4 text-lg-end">
+                    <p class="mb-0">&copy; <a class="text-dark border-bottom" href="#"></a>
+
+					<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+					Designed by <a class="text-dark border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
                 </div>
             </div>
         </div>
